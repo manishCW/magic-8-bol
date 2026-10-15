@@ -1,0 +1,6 @@
+apiVersion: v2
+name: magic-8-bol
+description: Magic 8 BOL internal warehouse demo
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

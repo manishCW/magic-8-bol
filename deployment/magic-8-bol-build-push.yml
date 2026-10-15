@@ -1,0 +1,24 @@
+# Copy to .github/workflows/ in it-business-platforms.
+# Place the application directory at magic-8-bol/ in that repository.
+name: Magic 8 BOL Build and Push
+on:
+  workflow_dispatch: {}
+  push:
+    branches: [dev, main]
+    paths:
+      - magic-8-bol/**
+      - .github/workflows/magic-8-bol-build-push.yml
+jobs:
+  build:
+    uses: coreweave/actions/.github/workflows/build-and-push-image.yml@workflows-v3.6.0
+    secrets:
+      ORG_REPO_READ_ONLY: ${{ secrets.ORG_REPO_READ_ONLY }}
+      ORG_BUILDKIT_CLIENT_TOKEN: ${{ secrets.ORG_BUILDKIT_CLIENT_TOKEN }}
+    with:
+      push-to-artifactory: true
+      push-to-ghcr: true
+      name: magic-8-bol
+      tags: |
+        ${{ github.ref_name }}.${{ github.run_id }}.${{ github.run_attempt }}
+      context: magic-8-bol
+      dockerfile: magic-8-bol/Dockerfile

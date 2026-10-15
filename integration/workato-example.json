@@ -1,0 +1,23 @@
+{
+  "batch_id": "REPLACE_WITH_UNIQUE_JOB_ID",
+  "account_id": "REPLACE_WITH_NETSUITE_ACCOUNT_ID",
+  "extracted_at": "2026-09-28T20:00:00Z",
+  "complete": true,
+  "expected_count": 1,
+  "allow_empty": false,
+  "records": [
+    {
+      "po_internal_id": "12345",
+      "po_number": "PO-10421",
+      "line_id": "1",
+      "item_number": "CAB-100",
+      "location_code": "Grapevine",
+      "vendor": "Northstar Supply",
+      "requested_receipt_date": "2026-09-28",
+      "ordered_quantity": 100,
+      "received_quantity": 20,
+      "unit_of_measure": "EA",
+      "closed": false
+    }
+  ]
+}

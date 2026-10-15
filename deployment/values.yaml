@@ -1,0 +1,9 @@
+# Copy to config/magic-8-bol/values.yaml in the deploy repository.
+# Replace the empty tag with the actual successful build tag before deployment.
+image:
+  tag: ""
+ingress:
+  host: magic-8-bol.internal.cwffff-us-east-04-it-dc-systems.coreweave.app
+persistence:
+  size: 1Gi
+  storageClass: null

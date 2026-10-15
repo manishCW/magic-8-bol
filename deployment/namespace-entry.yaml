@@ -1,0 +1,5 @@
+# Add magic-8-bol to the EXISTING allowed_namespaces list in
+# config/project.yaml. This snippet must not replace that file.
+project:
+  allowed_namespaces:
+    - magic-8-bol

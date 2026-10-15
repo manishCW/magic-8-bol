@@ -1,0 +1,21 @@
+# Append to config/services.yaml; preserve existing entries.
+# Cluster identifier follows the supplied guide, not a live cluster check.
+- name: magic-8-bol
+  destinationNamespace: magic-8-bol
+  source:
+    helm:
+      repoURL: https://github.com/coreweave/it-business-platforms.git
+      revision: dev
+      path: magic-8-bol/helm
+      valuesTemplateFiles:
+        - magic-8-bol/values.yaml
+  managedNamespaceMetadata:
+    labels:
+      ns.coreweave.cloud/managed: "true"
+  destinations:
+    - name: dev
+      autoPromote: true
+      clusterGroup:
+        - cluster: cks-cwffff-us-east-04-it-dc-systems
+  featureFlags:
+    includeDestinationGroupNameInApps: true

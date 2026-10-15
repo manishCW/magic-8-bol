@@ -1,0 +1,19 @@
+image:
+  repository: docker.artifacts.coreweave.com/cw-it-business-platforms-oci/magic-8-bol
+  tag: ""
+  pullSecrets:
+    - name: generic-image-pull-secret
+ingress:
+  host: ""
+  clusterIssuer: letsencrypt-prod
+persistence:
+  size: 1Gi
+  # null omits storageClassName and requests the cluster default.
+  storageClass: null
+resources:
+  requests:
+    cpu: 250m
+    memory: 512Mi
+  limits:
+    cpu: "1"
+    memory: 1Gi
